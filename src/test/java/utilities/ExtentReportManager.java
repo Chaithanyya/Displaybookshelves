@@ -100,9 +100,11 @@ public class ExtentReportManager implements ITestListener {
 		}
 	}
 
-	public void onFinish(ITestContext testContext) {
+	public void onFinish(ITestContext testContext) { 
 		
 		extent.flush();
+		
+		//to open extent reports automatically in the browser once all the test cases finish executing.
 		
 		String pathOfExtentReport = System.getProperty("user.dir")+"\\reports\\"+repName;
 		File extentReport = new File(pathOfExtentReport);
